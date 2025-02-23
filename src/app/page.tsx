@@ -1,30 +1,23 @@
-import React from 'react';
+type ButtonProps = {
+  label: string;
+  subtitle?: string;
+  color?: string;
+};
 
-let title: string = 'Hola mundo';
-
-let user = {
-  name: 'Juan',
-  age: 25,
-}
-
-function sumar(a: number, b: number): number {
-  return a + b;
-}
-
-function Button() {
-
-  
-
-  console.log(sumar(1, 2));
-  return <button>{title}</button>;
+function Button({ label, subtitle, color }: ButtonProps) {
+  return (
+    <button style={{ backgroundColor: color }}>
+      {label}
+      {subtitle}
+    </button>
+  );
 }
 
 function page() {
   return (
-    <>
-      <div>Bienvenido a el curso!</div>
-      <Button />
-    </>
+    <div>
+      <Button label='Texto' subtitle=' subtitulo' color={'#254786'} />
+    </div>
   );
 }
 
