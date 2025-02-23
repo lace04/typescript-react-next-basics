@@ -1,12 +1,18 @@
+type BackgroundColor = 'red' | 'blue' | 'green' | 'white';
+type Color = 'red' | 'blue' | 'green';
+
 type ButtonProps = {
   label: string;
   subtitle?: string;
-  color?: string;
+  color: Color;
+  backgroundColor: BackgroundColor;
 };
 
-function Button({ label, subtitle, color }: ButtonProps) {
+function Button({ label, subtitle, color, backgroundColor
+
+ }: ButtonProps) {
   return (
-    <button style={{ backgroundColor: color }}>
+    <button style={{ color, backgroundColor }}>
       {label}
       {subtitle}
     </button>
@@ -16,7 +22,11 @@ function Button({ label, subtitle, color }: ButtonProps) {
 function page() {
   return (
     <div>
-      <Button label='Texto' subtitle=' subtitulo' color={'#254786'} />
+      <Button
+        label="Click me"
+        color="red"
+        backgroundColor="white"
+      />
     </div>
   );
 }
